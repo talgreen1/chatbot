@@ -14,6 +14,8 @@ function getResources(userSegment) {
   
 }
 
+getResources();
+
 
 /* 
 global idleAvatarUrl;

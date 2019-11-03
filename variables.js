@@ -6,7 +6,7 @@ In JavaScript we use variables to store information for later use. To allow vari
 
 // chatArea is the variable that stores the place on the screen the chats will appear.
 var chatArea = document.getElementById('chat-area');
-var avatarImage = document.getElementById('avatar-ad').img;
+var avatarImage = document.getElementById('avatar-ad-image');
 
 // count is a variable that stores how many total chats have been sent.
 var count = 0;
