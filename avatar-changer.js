@@ -1,5 +1,6 @@
 function updateAvatarTyping() {
   console.log("##updateAvatarTyping ####" + typingAvatarUrl)
+  avatarDiv.style = ""
   avatarImage.src = typingAvatarUrl;
 }
 
@@ -15,5 +16,6 @@ global botTyping
 global avatarImage
 global idleAvatarUrl
 global typingAvatarUrl
+global avatarDiv
 
 */

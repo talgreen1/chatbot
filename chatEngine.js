@@ -42,9 +42,9 @@ function lookForChat() {
       } else {
         wait = 3000;
       }
+      updateAvatarTyping();
       setTimeout(function(){
         console.log("🕙 Waiting for bot");
-        updateAvatarTyping();
         botChat();
       }, wait);
     }
