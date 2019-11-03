@@ -520,9 +520,9 @@ Bounce
 
 .avenue-messenger div.agent-face {
   position: absolute;
-  left: 0;
+  /* left: 0; */
   top: -50px;
-  right: 0;
+  right: 205;
   margin: auto;
   width: 101px;
   height: 50px;
