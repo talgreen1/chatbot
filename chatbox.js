@@ -168,7 +168,7 @@ function fakeMessage() {
         avatarImage.src = avatar.idleUrl;
       }
   
-    }, 1000 * (i + 1));
+    }, 2000 * (i + 1));
 
     wait = Fake[i].wait;
     i++;
