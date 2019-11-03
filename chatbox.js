@@ -53,7 +53,7 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  'Hi there, I\'m Jesse and you?',
+  'Hi there, I\'m Jhon and you?',
   'Nice to meet you',
   'How are you?',
   'Not too bad, thanks',
