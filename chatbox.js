@@ -48,7 +48,7 @@ function getAllUrlParams(url) {
         if (!obj[paramName]) {
           // if it doesn't exist, create property
           obj[paramName] = paramValue;
-        } else if (obj[paramName] && typeof obj[paramName] === 'string'){
+        } else if (obj[paramName] && typeof obj[paramName] === 'string') {
           // if property does exist and it's a string, convert it to an array
           obj[paramName] = [obj[paramName]];
           obj[paramName].push(paramValue);
@@ -66,27 +66,27 @@ function getAllUrlParams(url) {
 
 var gender = getAllUrlParams().gender;
 if (!gender) {
-  gender='m';
+  gender = 'f';
 }
 console.log('******************************* gender = ' + gender);
 var avatar = getAdAvatar(gender);
 
-  // var = agentFace = document.getElementById('agentFace');
-  // agentFace.style = "visibl"  avatarImage.src = avatar.typingUrl;
+// var = agentFace = document.getElementById('agentFace');
+// agentFace.style = "visibl"  avatarImage.src = avatar.typingUrl;
 
-  agentName = document.getElementById('agentName');
-  agentName.textContent = avatar.botFirstName + ' '+ avatar.botLastName;
+agentName = document.getElementById('agentName');
+agentName.textContent = avatar.botFirstName + ' ' + avatar.botLastName;
 
 
-  // $('#agentFace').show();
-  
+// $('#agentFace').show();
+
 var $messages = $('.messages-content'),
-    d, h, m,
-    i = 0;
+  d, h, m,
+  i = 0;
 
-$(window).load(function() {
+$(window).load(function () {
   $messages.mCustomScrollbar();
-  setTimeout(function() {
+  setTimeout(function () {
     fakeMessage();
   }, 100);
 });
@@ -99,7 +99,7 @@ function updateScrollbar() {
   });
 }
 
-function setDate(){
+function setDate() {
   d = new Date()
   if (m != d.getMinutes()) {
     m = d.getMinutes();
@@ -118,16 +118,16 @@ function insertMessage() {
   setDate();
   $('.message-input').val(null);
   updateScrollbar();
-  setTimeout(function() {
+  setTimeout(function () {
     fakeMessage();
-  }, 1000 );//+ (Math.random() * 20) * 100);
+  }, 1000);//+ (Math.random() * 20) * 100);
 }
 
-$('.message-submit').click(function() {
+$('.message-submit').click(function () {
   insertMessage();
 });
 
-$(window).on('keydown', function(e) {
+$(window).on('keydown', function (e) {
   if (e.which == 13) {
     insertMessage();
     return false;
@@ -135,14 +135,13 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  'Hi there, I\'m ' + avatar.botFirstName + '. How can I help you?', //I'm looking for a store near by.
-  'What is your location?', // Airport city
-  'Wonderful! We have a store near by - Yeynot-Bitan',
-  'I have a special suprise for you :) ',
-  '<div class="coupon"><div class="coupon__tag">✶ Coupon ✶</div><div class="coupon__body"><div class="coupon__title">Coca Cola</div><div class="coupon__value"><strong>-5$</strong></div></div></div>',
-  'Is there anything else I can help you with?', // no, thank you
-  'Thank you. Have a great day!'
-  
+  { msg: 'Hi there, I\'m ' + avatar.botFirstName + '. How can I help you?', wait: true }, //I'm looking for a store near by.
+  { msg: 'What is your location?', wait: true }, // Airport city
+  { msg: 'Wonderful! We have a store near by - Yeynot-Bitan', wait: false },
+  { msg: 'I have a special suprise for you :) ', wait: false },
+  { msg: '<div class="coupon"><div class="coupon__tag">✶ Coupon ✶</div><div class="coupon__body"><div class="coupon__title">Coca Cola</div><div class="coupon__value"><strong>-5$</strong></div></div></div>', wait: false },
+  { msg: 'Is there anything else I can help you with?', wait: true }, // no, thank you
+  { msg: 'Thank you. Have a great day!', wait: true }
 ]
 
 function fakeMessage() {
@@ -153,23 +152,36 @@ function fakeMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="' +avatar.faceUrl +   '" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="' + avatar.faceUrl + '" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 
-  setTimeout(function() {
-    $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="' +avatar.faceUrl + '" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
-    setDate();
-    updateScrollbar();
-    i++;
-    avatarImage.src = avatar.idleUrl;
-  }, 1000 + (Math.random() * 20) * 100);
+  let wait;
+  while (!wait) {
+    const msg = Fake[i].msg;
+    setTimeout(function () {
+      $('.message.loading').remove();
 
-  
+
+
+      $('<div class="message new"><figure class="avatar"><img src="' + avatar.faceUrl + '" /></figure>' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+      setDate();
+      updateScrollbar();
+      avatarImage.src = avatar.idleUrl;
+
+
+    }, 1000 + (Math.random() * 20) * 100);
+
+    wait = Fake[i].wait;
+    i++;
+
+    
+
+  }
+
 }
 
-$('.button').click(function(){
+$('.button').click(function () {
   $('.menu .items span').toggleClass('active');
-   $('.menu .button').toggleClass('active');
+  $('.menu .button').toggleClass('active');
 });
 
