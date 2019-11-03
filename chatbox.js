@@ -155,24 +155,23 @@ function fakeMessage() {
   $('<div class="message loading new"><figure class="avatar"><img src="' + avatar.faceUrl + '" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 
-  let wait;
+  let wait = false;
   while (!wait) {
     const msg = Fake[i].msg;
+    let j = i;
     setTimeout(function () {
       $('.message.loading').remove();
-
-
-
       $('<div class="message new"><figure class="avatar"><img src="' + avatar.faceUrl + '" /></figure>' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
       setDate();
       updateScrollbar();
-      avatarImage.src = avatar.idleUrl;
-    }, 1000  * i);
+      if(Fake[j].wait){
+        avatarImage.src = avatar.idleUrl;
+      }
+  
+    }, 1000 * (i + 1));
 
     wait = Fake[i].wait;
     i++;
-
-    
 
   }
 
