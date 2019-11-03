@@ -6,11 +6,10 @@ function getResources(userSegment) {
     "couponUrl": "https://www.amazon.com/adidas-Bottles-Training-Performance-Running/dp/B078TBLJ6P"
   };
   
-  var obj = JSON.parse(responseFromServer);
-  idleAvatarUrl = obj.idleUrl;
-  typingAvatarUrl = obj.typingUrl;
-  couponText = obj.couponText;
-  couponUrl = obj.couponUrl;
+  idleAvatarUrl = responseFromServer.idleUrl;
+  typingAvatarUrl = responseFromServer.typingUrl;
+  couponText = obresponseFromServerj.couponText;
+  couponUrl = responseFromServer.couponUrl;
   
 }
 
