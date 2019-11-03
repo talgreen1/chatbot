@@ -71,6 +71,8 @@ if (!gender) {
 console.log('******************************* gender = ' + gender);
 var avatar = getAdAvatar(gender);
 
+  // var = agentFace = document.getElementById('agentFace');
+  // agentFace.style = "visibl"  avatarImage.src = avatar.typingUrl;
 
 
 
