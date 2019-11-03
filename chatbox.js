@@ -78,7 +78,7 @@ var avatar = getAdAvatar(gender);
   agentName.textContent = avatar.botFirstName + ' '+ avatar.botLastName;
 
 
-  $('#agentFace').show();
+  // $('#agentFace').show();
   
 var $messages = $('.messages-content'),
     d, h, m,
@@ -155,6 +155,7 @@ var Fake = [
 function fakeMessage() {
   console.log('***************** in fakeMessage()');
   avatarImage = document.getElementById('avatar');
+  $('#agentFace').show();
   avatarImage.src = avatar.typingUrl;
   if ($('.message-input').val() != '') {
     return false;
