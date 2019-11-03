@@ -74,8 +74,7 @@ var avatar = getAdAvatar(gender);
   // var = agentFace = document.getElementById('agentFace');
   // agentFace.style = "visibl"  avatarImage.src = avatar.typingUrl;
 
-  agentName = document.getElementById('agentName');
-  agentName.textContent = avatar.botFirstName + ' '+ avatar.botLastName;
+
 
 var $messages = $('.messages-content'),
     d, h, m,
@@ -172,6 +171,8 @@ function fakeMessage() {
 }
 
 $('.button').click(function(){
+  agentName = document.getElementById('agentName');
+  agentName.val = avatar.botFirstName + avatar.botLastName;
   $('.menu .items span').toggleClass('active');
    $('.menu .button').toggleClass('active');
 });
