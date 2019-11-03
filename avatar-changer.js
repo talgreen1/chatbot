@@ -1,9 +1,11 @@
-function updateAvatar() {
-  if(botTyping){
-      avatarImage.src = typingAvatarUrl;
-  } else {
-      avatarImage.src = idleAvatarUrl;
-  }
+function updateAvatarTyping() {
+  console.log("##updateAvatarTyping ####" + typingAvatarUrl)
+  avatarImage.src = typingAvatarUrl;
+}
+
+function updateAvatarIdle() {
+  console.log("###updateAvatarIdle###" + idleAvatarUrl)
+  avatarImage.src = idleAvatarUrl;
 }
 
 

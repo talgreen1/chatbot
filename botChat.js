@@ -17,8 +17,11 @@ function botChat() {
     nextMessage.message = sendSpecialChat[1]; 
   }
 
+
   // Send the bot's message.
   send(nextMessage.sender, nextMessage.message);
+
+  updateAvatarIdle();
 
   // Count 1 more chat that the bot has sent unless the chat was a sendSpecialChat.
   if (sendSpecialChat[0]) {
@@ -30,6 +33,7 @@ function botChat() {
 
   // Start listening again after the bot has sent a message.
   listenFor();
+
 }
 
 

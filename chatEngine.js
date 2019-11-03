@@ -7,8 +7,7 @@ This JavaScript file has all of the code to find chats from the bot and user and
 function lookForChat() {
   // If there have been no chats yet, start the bot.
   if (count == 0) {
-    botTyping = true;
-    updateAvatar();
+
     startBot();
   }
   
@@ -19,8 +18,6 @@ function lookForChat() {
   
   if (last == "bot") {
     // if the bot chatted last wait for the user to send a chat
-    botTyping = false;
-    updateAvatar();
     userChat();
     
   } else {
@@ -41,12 +38,13 @@ function lookForChat() {
       // Set the appropriate wait time to make the bot feel realistic.
       // Then run the botChat function which will find the right message for the bot
       if (count == 0) {
-        wait = 100;
+        wait = 1000;
       } else {
-        wait = 500;
+        wait = 3000;
       }
       setTimeout(function(){
         console.log("🕙 Waiting for bot");
+        updateAvatarTyping();
         botChat();
       }, wait);
     }
