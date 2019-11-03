@@ -77,6 +77,9 @@ var avatar = getAdAvatar(gender);
   agentName = document.getElementById('agentName');
   agentName.textContent = avatar.botFirstName + ' '+ avatar.botLastName;
 
+
+  $('#agentFace').show();
+  
 var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
