@@ -745,3 +745,45 @@ box-shadow: 0px 0px 10px rgba(0,0,0,.8);*/
     -moz-box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
   }
 }
+
+.coupon {
+  position: relative;
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px dashed black;
+  background-color: #f40009;
+}
+.coupon .coupon__tag {
+  position: absolute;
+  left: -27%;
+  bottom: 45%;
+  width: 70%;
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  font-size: 0.65em;
+  text-align: center;
+  font-family: Helvetica;
+  color: black;
+}
+.coupon .coupon__body {
+  margin-left: 30px;
+  padding: 10px;
+  border-left: 1px dotted black;
+}
+.coupon .coupon__body .coupon__title, .coupon .coupon__body .coupon__value {
+  text-align: center;
+}
+.coupon .coupon__body .coupon__title {
+  font-family: Helvetica;
+  font-size: 1em;
+  text-shadow: 1px 1px 0 black;
+  color: white;
+}
+.coupon .coupon__body .coupon__value {
+  font-family: Museo slab;
+  font-size: 2em;
+  color: white;
+  text-shadow: 2px 2px 0 black;
+}
