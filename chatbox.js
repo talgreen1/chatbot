@@ -135,12 +135,14 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  'Hi there, I\'m ' + avatar.botFirstName + ' and you?',
-  'Nice to meet you',
-  'How are you?',
-  'Not too bad, thanks',
-  'Bye',
-  '<div class="coupon"><div class="coupon__tag">✶ Coupon ✶</div><div class="coupon__body"><div class="coupon__title">Coca Cola</div><div class="coupon__value"><strong>-5$</strong></div></div></div>'
+  'Hi there, I\'m ' + avatar.botFirstName + '. How can I help you?', //I'm looking for a store near by.
+  'What is your location?', // Airport city
+  'Wonderful! We have a store near by - Yeynot-Bitan',
+  'I have a special suprise for you :) ',
+  '<div class="coupon"><div class="coupon__tag">✶ Coupon ✶</div><div class="coupon__body"><div class="coupon__title">Coca Cola</div><div class="coupon__value"><strong>-5$</strong></div></div></div>',
+  'Is there anything else I can help you with?', // no, thank you
+  'Thank you. Have a great day!'
+  
 ]
 
 function fakeMessage() {
