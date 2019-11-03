@@ -167,9 +167,7 @@ function fakeMessage() {
       setDate();
       updateScrollbar();
       avatarImage.src = avatar.idleUrl;
-
-
-    }, 1000 + (Math.random() * 20) * 100);
+    }, 1000  * i);
 
     wait = Fake[i].wait;
     i++;
